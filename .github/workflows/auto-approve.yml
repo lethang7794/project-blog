@@ -10,3 +10,5 @@ jobs:
     if: github.actor == 'dependabot[bot]' || github.actor == 'lethang7794'
     steps:
       - uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.BOT_TOKEN }}
