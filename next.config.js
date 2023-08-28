@@ -16,7 +16,7 @@ module.exports = () => {
       return gitBranch;
     })(),
     GIT_COMMIT_HASH: (() => {
-      return gitCommitHash.slice(0, 8);
+      return gitCommitHash.slice(0, 7);
     })(),
     GIT_COMMIT_TAG: (() => {
       return gitCommitTag;
