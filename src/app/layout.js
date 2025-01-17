@@ -3,6 +3,7 @@ import { Work_Sans, Spline_Sans_Mono } from 'next/font/google';
 import clsx from 'clsx';
 import { cookies } from 'next/headers';
 
+import { getBuildMetadata } from '../../next.config.git-plugin.mjs';
 import MotionConfig from '@/components/client/MotionConfig';
 
 import { LIGHT_TOKENS, DARK_TOKENS } from '@/constants';
@@ -26,11 +27,7 @@ const monoFont = Spline_Sans_Mono({
 
 export const metadata = {
   other: {
-    env: process.env.BUILD_ENV ||process.env.GIT_BRANCH,
-    version: [process.env.GIT_COMMIT_TAG, process.env.GIT_COMMIT_HASH, process.env.GIT_COMMIT_DATE]
-      .filter(Boolean)
-      .join(' - '),
-    'deployed-at': process.env.BUILD_DATE,
+    ...getBuildMetadata(),
   },
 };
 
