@@ -3,6 +3,7 @@ import { Work_Sans, Spline_Sans_Mono } from 'next/font/google';
 import clsx from 'clsx';
 import { cookies } from 'next/headers';
 
+import { getBuildMetadata } from '../../next.config.git-plugin.mjs';
 import MotionConfig from '@/components/client/MotionConfig';
 
 import { LIGHT_TOKENS, DARK_TOKENS } from '@/constants';
