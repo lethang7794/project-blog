@@ -26,11 +26,7 @@ const monoFont = Spline_Sans_Mono({
 
 export const metadata = {
   other: {
-    env: process.env.BUILD_ENV ||process.env.GIT_BRANCH,
-    version: [process.env.GIT_COMMIT_TAG, process.env.GIT_COMMIT_HASH, process.env.GIT_COMMIT_DATE]
-      .filter(Boolean)
-      .join(' - '),
-    'deployed-at': process.env.BUILD_DATE,
+    ...getBuildMetadata(),
   },
 };
 
